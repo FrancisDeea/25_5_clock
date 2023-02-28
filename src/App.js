@@ -15,7 +15,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="App">
+        <h1>25 + 5 Clock App</h1>
+        <components.Set />
         <components.Timer />
       </div>
     )
