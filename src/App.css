@@ -1,1 +1,93 @@
-/*# sourceMappingURL=App.css.map */
+#app {
+  width: 80vw;
+  max-width: 350px;
+  border: 2px solid black;
+}
+#app .set-container-in {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+#app .set-container-in #break-label, #app .set-container-in #session-label {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  background-color: rgb(255, 248, 206);
+}
+#app .set-container-in .info-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+#app .set-container-in .info-container button {
+  font-size: 2.5rem;
+  height: 40px;
+  border: none;
+  flex: 1;
+  cursor: pointer;
+}
+#app .set-container-in .info-container .btn-left {
+  border-right: 2px solid black;
+}
+#app .set-container-in .info-container .btn-right {
+  border-left: 2px solid black;
+}
+#app .set-container-in .info-container span {
+  flex: 2;
+}
+#app .set-container-in .info-container #break-length, #app .set-container-in .info-container #session-length {
+  text-align: center;
+  font-size: 2.2rem;
+}
+#app #timer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: rgb(255, 248, 206);
+}
+#app #timer #session-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+#app #timer #session-container #timer-label {
+  font-size: 2.2rem;
+}
+#app #timer #session-container #timer-left {
+  display: grid;
+  place-content: center;
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+  border-radius: 50%;
+  margin: 0.5rem 0 1rem 0;
+  font-size: 3rem;
+  background-color: white;
+}
+#app #timer #buttons-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+#app #timer #buttons-container button {
+  width: 50px;
+  height: 30px;
+  border: 2px solid black;
+  background-color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+#app #timer #buttons-container button:hover {
+  background-color: rgb(232, 232, 232);
+}/*# sourceMappingURL=App.css.map */

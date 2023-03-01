@@ -6,8 +6,8 @@ export const Timer = (props) => (
         </div>
         
         <div id="buttons-container">
-            <button id="start_stop">Play</button>
-            <button id="reset">Reset</button>
+            <button id="start_stop"><i class="fa-solid fa-play"></i></button>
+            <button id="reset"><i class="fa-solid fa-stop"></i></button>
         </div>
     </div>
 )

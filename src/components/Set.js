@@ -1,20 +1,20 @@
 export const Set = (props) => (
     <div id="set-container">
-        <div id="break-set-container">
+        <div class="set-container-in">
             <span id="break-label">Break Length</span>
-            <div id="break-info-container">
-                <button id="break-decrement">-</button>
+            <div class="info-container">
+                <button id="break-decrement" class="btn-left">-</button>
                 <span id="break-length">5:00</span>
-                <button id="break-increment">-</button>
+                <button id="break-increment" class="btn-right">+</button>
             </div>
         </div>
 
-        <div id="session-set-container">
-            <span id="session-label">Break Length</span>
-            <div id="session-info-container">
-                <button id="session-decrement">-</button>
+        <div class="set-container-in">
+            <span id="session-label">Session Length</span>
+            <div class="info-container">
+                <button id="session-decrement" class="btn-left">-</button>
                 <span id="session-length">25:00</span>
-                <button id="session-increment">-</button>
+                <button id="session-increment" class="btn-right">+</button>
             </div>
         </div>
     </div>
