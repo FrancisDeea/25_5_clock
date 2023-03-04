@@ -12,9 +12,9 @@ export const Set = (props) => (
         <div className="set-container-in">
             <span id="session-label">Session Length</span>
             <div className="info-container">
-                <button id="session-decrement" className="btn-left" value="-">-</button>
+                <button id="session-decrement" className="btn-left" value="-" onClick={props.handleSession}>-</button>
                 <span id="session-length">{props.session}</span>
-                <button id="session-increment" className="btn-right" value="+">+</button>
+                <button id="session-increment" className="btn-right" value="+" onClick={props.handleSession}>+</button>
             </div>
         </div>
     </div>

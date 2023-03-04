@@ -12,6 +12,7 @@ class App extends React.Component {
     };
     this.handleReset = this.handleReset.bind(this);
     this.handleBreak = this.handleBreak.bind(this);
+    this.handleSession = this.handleSession.bind(this);
   }
 
   // Add methods here:
@@ -37,6 +38,23 @@ class App extends React.Component {
     };
   }
 
+  handleSession(e) {
+    const value = e.target.value;
+    const sessionLength = this.state.session;
+    if (value === "-" && sessionLength > 1) {
+      this.setState(state => ({
+        session: state.session - 1,
+        currentSession: {minute: state.session - 1, second: "00"}
+        
+      }))
+    } else if (value === "+" && sessionLength < 60) {
+      this.setState(state => ({
+        session: state.session + 1,
+        currentSession: {minute: state.session + 1, second: "00"}
+      }))
+    };
+  }
+
   render() {
     return (
       <div id="app">
@@ -44,6 +62,7 @@ class App extends React.Component {
           break={this.state.break}
           session={this.state.session}
           handleBreak={this.handleBreak}
+          handleSession={this.handleSession}
         />
         <components.Timer 
           current={this.state.currentSession}
