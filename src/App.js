@@ -8,15 +8,19 @@ class App extends React.Component {
     this.state = {
       break: 5,
       session: 25,
-      currentSession: {
-        minute: 25,
-        second: "00"
-      }
-    }
+      currentSession: {minute: 25, second: "00"}
+    };
+    this.handleReset = this.handleReset.bind(this);
   }
 
   // Add methods here:
-
+  handleReset() {
+    this.setState({
+      break: 5,
+      session: 25,
+      currentSession: {minute: 25, second: "00"}
+    })
+  }
 
   render() {
     return (
@@ -27,6 +31,7 @@ class App extends React.Component {
         />
         <components.Timer 
           current={this.state.currentSession}
+          reset={this.handleReset}
         />
       </div>
     )
