@@ -1,20 +1,20 @@
 export const Set = (props) => (
     <div id="set-container">
-        <div class="set-container-in">
+        <div className="set-container-in">
             <span id="break-label">Break Length</span>
-            <div class="info-container">
-                <button id="break-decrement" class="btn-left">-</button>
+            <div className="info-container">
+                <button id="break-decrement" className="btn-left" value="-" onClick={props.handleBreak}>-</button>
                 <span id="break-length">{props.break}</span>
-                <button id="break-increment" class="btn-right">+</button>
+                <button id="break-increment" className="btn-right" value="+" onClick={props.handleBreak}>+</button>
             </div>
         </div>
 
-        <div class="set-container-in">
+        <div className="set-container-in">
             <span id="session-label">Session Length</span>
-            <div class="info-container">
-                <button id="session-decrement" class="btn-left">-</button>
+            <div className="info-container">
+                <button id="session-decrement" className="btn-left" value="-">-</button>
                 <span id="session-length">{props.session}</span>
-                <button id="session-increment" class="btn-right">+</button>
+                <button id="session-increment" className="btn-right" value="+">+</button>
             </div>
         </div>
     </div>
