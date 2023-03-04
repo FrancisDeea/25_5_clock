@@ -8,7 +8,8 @@ class App extends React.Component {
     this.state = {
       break: 5,
       session: 25,
-      currentSession: {minute: 25, second: "00"}
+      currentSession: {minute: 25, second: "00"},
+      isRunning: false
     };
     this.handleReset = this.handleReset.bind(this);
     this.handleBreak = this.handleBreak.bind(this);
@@ -20,7 +21,8 @@ class App extends React.Component {
     this.setState({
       break: 5,
       session: 25,
-      currentSession: {minute: 25, second: "00"}
+      currentSession: {minute: 25, second: "00"},
+      isRunning: false
     })
   }
 
