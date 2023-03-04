@@ -6,7 +6,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      break: 5,
+      session: 25,
+      currentSession: {
+        minute: 25,
+        second: "00"
+      }
     }
   }
 
@@ -16,8 +21,13 @@ class App extends React.Component {
   render() {
     return (
       <div id="app">
-        <components.Set />
-        <components.Timer />
+        <components.Set 
+          break={this.state.break}
+          session={this.state.session}
+        />
+        <components.Timer 
+          current={this.state.currentSession}
+        />
       </div>
     )
   }
