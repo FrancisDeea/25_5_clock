@@ -2,7 +2,7 @@ export const Timer = (props) => (
     <div id="timer">
         <div id="session-container">
             <span id="timer-label">Session</span>
-            <span id="timer-left">{`${props.current.minute}:${props.current.second}`}</span>
+            <span id="timer-left">{`${props.current.minute}:${props.current.second < 10 ? "0" + props.current.second : props.current.second}`}</span>
         </div>
 
         <div id="buttons-container">

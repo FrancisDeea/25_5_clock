@@ -8,7 +8,7 @@ class App extends React.Component {
     this.state = {
       break: 5,
       session: 25,
-      currentSession: { minute: 25, second: "00" },
+      currentSession: { minute: 25, second: 0 },
       isRunning: false
     };
     this.handleReset = this.handleReset.bind(this);
@@ -22,9 +22,10 @@ class App extends React.Component {
     this.setState({
       break: 5,
       session: 25,
-      currentSession: { minute: 25, second: "00" },
+      currentSession: { minute: 25, second: 0 },
       isRunning: false
     })
+    if(this.interval) {clearInterval(this.interval)}
   }
 
   handleBreak(e) {
@@ -47,20 +48,44 @@ class App extends React.Component {
     if (value === "-" && sessionLength > 1) {
       this.setState(state => ({
         session: state.session - 1,
-        currentSession: { minute: state.session - 1, second: "00" }
+        currentSession: { minute: state.session - 1, second: 0 }
 
       }))
     } else if (value === "+" && sessionLength < 60) {
       this.setState(state => ({
         session: state.session + 1,
-        currentSession: { minute: state.session + 1, second: "00" }
+        currentSession: { minute: state.session + 1, second: 0 }
       }))
     };
   }
 
   handlePlay() {
-    
+    const minute = this.state.currentSession.minute;
+    const second = this.state.currentSession.second;
+    const isRunning = this.state.isRunning;
+    if (!isRunning) {
+      this.setState({ isRunning: true });
+      this.startTimer(minute, second);
+    } else {
+      this.setState({ isRunning: false });
+      clearInterval(this.interval)
+    }
+
   }
+
+  startTimer(minute, second) {
+    let totalSeconds = minute * 60 + second;
+    totalSeconds--
+
+    this.interval = setInterval(() => {
+      this.setState({ 
+        currentSession: {minute: Math.floor(totalSeconds/60), second: totalSeconds%60}
+      });
+      totalSeconds--
+    }, 1000)
+  }
+
+
 
   render() {
     return (
