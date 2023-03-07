@@ -31,32 +31,36 @@ class App extends React.Component {
   handleBreak(e) {
     const value = e.target.value;
     const breakLength = this.state.break;
-    if (value === "-" && breakLength > 1) {
-      this.setState(state => ({
-        break: state.break - 1
-      }))
-    } else if (value === "+" && breakLength < 60) {
-      this.setState(state => ({
-        break: state.break + 1
-      }))
-    };
+    if (!this.state.isRunning) {
+      if (value === "-" && breakLength > 1) {
+        this.setState(state => ({
+          break: state.break - 1
+        }))
+      } else if (value === "+" && breakLength < 60) {
+        this.setState(state => ({
+          break: state.break + 1
+        }))
+      }
+    }
   }
 
   handleSession(e) {
     const value = e.target.value;
     const sessionLength = this.state.session;
-    if (value === "-" && sessionLength > 1) {
-      this.setState(state => ({
-        session: state.session - 1,
-        currentSession: { minute: state.session - 1, second: 0 }
-
-      }))
-    } else if (value === "+" && sessionLength < 60) {
-      this.setState(state => ({
-        session: state.session + 1,
-        currentSession: { minute: state.session + 1, second: 0 }
-      }))
-    };
+    if (!this.state.isRunning) {
+      if (value === "-" && sessionLength > 1) {
+        this.setState(state => ({
+          session: state.session - 1,
+          currentSession: { minute: state.session - 1, second: 0 }
+  
+        }))
+      } else if (value === "+" && sessionLength < 60) {
+        this.setState(state => ({
+          session: state.session + 1,
+          currentSession: { minute: state.session + 1, second: 0 }
+        }))
+      };
+    }
   }
 
   handlePlay() {
